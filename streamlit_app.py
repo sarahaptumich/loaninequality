@@ -7,4 +7,4 @@ alt.themes.enable("fivethirtyeight")
 
 # Add a title and intro text
 st.title('Loan Discrimination Exploration')
-st.text("By: Kenny Tang & Sara Haptonstall")
+st.subheader(("By: Kenny Tang & Sara Haptonstall")
