@@ -24,5 +24,5 @@ st.write("This research was conducted over 5 years ago using 2015 and 2016 mortg
          As years past and America approaches a more culturally diverse society, we would like to know whether discrimination still plays a \
          significant affect on home mortgage loan approvals for different minority groups. In addition to this, to expand upon the work that \
          inspired our analysis, we will also observe discrepancies in interest rates for different minority groups.")
-st.header("Load Data")
+st.header("Meet the data")
 
