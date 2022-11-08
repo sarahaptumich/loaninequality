@@ -25,4 +25,8 @@ st.write("This research was conducted over 5 years ago using 2015 and 2016 mortg
          significant affect on home mortgage loan approvals for different minority groups. In addition to this, to expand upon the work that \
          inspired our analysis, we will also observe discrepancies in interest rates for different minority groups.")
 st.header("Meet the data")
+st.write("We will conduct our exploratory analysis on interest rate and approval rate differences between races across first mortgage loans \
+         intended as a primary residence in the United States. \n
+         Some of our datasets are extremely large; therefore, we will utilize PySpark to process the data more efficiently and also import\
+         additional dependencies ")
 
