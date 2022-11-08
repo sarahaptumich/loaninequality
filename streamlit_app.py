@@ -32,15 +32,17 @@ st.write("Some of our datasets are extremely large; therefore, we will utilize P
 
 
 #load libraries
-libraries= '''import pandas as pd
+libraries= '''#import libraries
+import pandas as pd
 import numpy as np
 import altair as alt
-import pyspark
-from pyspark.sql import SparkSession 
 from scipy.stats import ttest_ind
 from causalinference import CausalModel
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
+#pyspark to process large datasets
+import pyspark
+from pyspark.sql import SparkSession 
 #theme
 alt.themes.enable("fivethirtyeight")'''
 
