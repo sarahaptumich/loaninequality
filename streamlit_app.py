@@ -4,7 +4,7 @@ st.set_page_config(layout="wide")
 import pandas as pd
 import numpy as np
 import altair as alt
-import pyspark as spark
+import pyspark 
 from pyspark.sql import SparkSession 
 from io import StringIO
 from scipy.stats import ttest_ind
@@ -54,7 +54,14 @@ st.code(libraries, language='python')
 st.write("Due to its size, we will load HMDA loan application data in as a PySpark table. The HOLC dataset is not as large, so\
          we will loaded as a pandas DataFrame. ")
 
-#create PySpark session
+#pyspark session
+
+spark = SparkSession \
+    .builder \
+    .master("local[*]") \
+    .appName('My First Spark application') \
+    .getOrCreate()
+sc = spark.sparkContext
 _pyspark= '''#pyspark session
 
 spark = SparkSession.builder.master("local[*]").appName('My First Spark application').getOrCreate()
