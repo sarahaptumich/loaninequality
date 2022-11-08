@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import altair as alt
 from io import StringIO
-from scipy.stats import ttest_ind
 from causalinference import CausalModel
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
