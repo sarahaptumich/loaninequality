@@ -26,7 +26,9 @@ st.write("This research was conducted over 5 years ago using 2015 and 2016 mortg
          inspired our analysis, we will also observe discrepancies in interest rates for different minority groups.")
 st.header("Meet the data")
 st.write("We will conduct our exploratory analysis on interest rate and approval rate differences between races across first mortgage loans \
-         intended as a primary residence in the United States.")
+         intended as a primary residence in the United States. We will also use a dataset provided by Home Owner Loan Corporation (HOLC) to \
+         identify areas that may be most affected by redlining discrimination. For more information on Redlining, we suggest this great articule\
+         [Mapping Inequiality](https://dsl.richmond.edu/panorama/redlining/#loc=5/39.1/-94.58&text=intro)")
 st.write("Some of our datasets are extremely large; therefore, we will utilize PySpark to process the data more efficiently and also import\
          additional dependencies ")
 
@@ -48,3 +50,5 @@ alt.themes.enable("fivethirtyeight")'''
 
 st.code(libraries, language='python')
 
+st.write("Due to its size, we will load HMDA loan application data in as a PySpark table. The HOLC dataset is not as large, so\
+         we will loaded as a pandas DataFrame. ")
