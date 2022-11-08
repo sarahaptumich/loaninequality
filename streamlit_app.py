@@ -61,3 +61,11 @@ sc = spark.sparkContext'''
 
 st.code(_pyspark, language='python')
 
+_df_hm= ''' #HMDA loan application data
+df_hm = spark.read.option("header",True) \
+     .csv("2021_public_lar.csv")
+df_hm.show(2,truncate=False)'''
+
+st.code(_df_hm, language='python')
+
+
