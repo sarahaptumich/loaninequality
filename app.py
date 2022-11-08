@@ -2,8 +2,6 @@
 import pandas as pd
 import numpy as np
 import altair as alt
-import pyspark
-from pyspark.sql import SparkSession 
 from io import StringIO
 from scipy.stats import ttest_ind
 from causalinference import CausalModel
