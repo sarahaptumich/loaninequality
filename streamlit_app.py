@@ -29,7 +29,10 @@ st.write("We will conduct our exploratory analysis on interest rate and approval
          intended as a primary residence in the United States.")
 st.write("Some of our datasets are extremely large; therefore, we will utilize PySpark to process the data more efficiently and also import\
          additional dependencies ")
-st.code('import pandas as pd
+
+
+#load libraries
+libraries= '''import pandas as pd
 import numpy as np
 import altair as alt
 import pyspark
@@ -40,5 +43,7 @@ from causalinference import CausalModel
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
 import streamlit as st
-alt.themes.enable("fivethirtyeight")')
+alt.themes.enable("fivethirtyeight")'''
+
+st.code(libraries, language='python')
 
