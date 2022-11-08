@@ -2,10 +2,6 @@
 import pandas as pd
 import numpy as np
 import altair as alt
-from io import StringIO
-from causalinference import CausalModel
-import statsmodels.formula.api as smf
-import statsmodels.api as sm
 import streamlit as st
 alt.themes.enable("fivethirtyeight")
 
