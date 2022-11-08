@@ -52,3 +52,15 @@ st.code(libraries, language='python')
 
 st.write("Due to its size, we will load HMDA loan application data in as a PySpark table. The HOLC dataset is not as large, so\
          we will loaded as a pandas DataFrame. ")
+
+_pyspark= '''#pyspark session
+
+spark = SparkSession \
+    .builder \
+    .master("local[*]") \
+    .appName('My First Spark application') \
+    .getOrCreate()
+sc = spark.sparkContext'''
+
+st.code(_pyspark, language='python')
+
