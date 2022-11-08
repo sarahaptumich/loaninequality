@@ -55,11 +55,7 @@ st.write("Due to its size, we will load HMDA loan application data in as a PySpa
 
 _pyspark= '''#pyspark session
 
-spark = SparkSession \
-    .builder \
-    .master("local[*]") \
-    .appName('My First Spark application') \
-    .getOrCreate()
+spark = SparkSession.builder.master("local[*]").appName('My First Spark application').getOrCreate()
 sc = spark.sparkContext'''
 
 st.code(_pyspark, language='python')
