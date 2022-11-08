@@ -4,7 +4,7 @@ st.set_page_config(layout="wide")
 import pandas as pd
 import numpy as np
 import altair as alt
-import pyspark
+import pyspark as spark
 from pyspark.sql import SparkSession 
 from io import StringIO
 from scipy.stats import ttest_ind
