@@ -62,21 +62,21 @@ st.write("Due to its size, we will load HMDA loan application data in as a PySpa
 #     .appName('My First Spark application') \
 #     .getOrCreate()
 # sc = spark.sparkContext
-# _pyspark= '''#pyspark session
+_pyspark= '''#pyspark session
 
-# spark = SparkSession.builder.master("local[*]").appName('My First Spark application').getOrCreate()
-# sc = spark.sparkContext'''
+spark = SparkSession.builder.master("local[*]").appName('My First Spark application').getOrCreate()
+sc = spark.sparkContext'''
 
-# st.code(_pyspark, language='python')
+st.code(_pyspark, language='python')
 
 # #load data HMDA
 
-# _df_hm= ''' #HMDA loan application data
-# df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
+_df_hm= ''' #HMDA loan application data
+df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
 
-# df_hm.show(2,truncate=False)'''
+df_hm.show(2,truncate=False)'''
 
-# st.code(_df_hm, language='python')
+st.code(_df_hm, language='python')
 
 # df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
 
