@@ -1,6 +1,6 @@
 #Import the required Libraries
 import streamlit as st
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide") #to make the page wide
 import pandas as pd
 import numpy as np
 import altair as alt
