@@ -70,10 +70,7 @@ spark = SparkSession.builder.master("local[*]").appName('My First Spark applicat
 sc = spark.sparkContext
 
 #load data HMDA
-
-#HMDA loan application data
 df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
-
 df_hm.show(2,truncate=False)'''
 
 st.code(_pyspark, language='python')
