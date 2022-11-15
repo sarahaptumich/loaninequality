@@ -56,12 +56,12 @@ st.write("Due to its size, we will load HMDA loan application data in as a PySpa
 
 # create pyspark session
 
-spark = SparkSession \
-    .builder \
-    .master("local[*]") \
-    .appName('My First Spark application') \
-    .getOrCreate()
-sc = spark.sparkContext
+# spark = SparkSession \
+#     .builder \
+#     .master("local[*]") \
+#     .appName('My First Spark application') \
+#     .getOrCreate()
+# sc = spark.sparkContext
 
 # py park soce for streamlit
 _pyspark= '''#pyspark session
