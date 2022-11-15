@@ -54,15 +54,6 @@ st.code(libraries, language='python')
 st.write("Due to its size, we will load HMDA loan application data in as a PySpark table. The HOLC dataset is not as large, so\
          we will loaded as a pandas DataFrame. ")
 
-# create pyspark session
-
-# spark = SparkSession \
-#     .builder \
-#     .master("local[*]") \
-#     .appName('My First Spark application') \
-#     .getOrCreate()
-# sc = spark.sparkContext
-
 # py park soce for streamlit
 _pyspark= '''#pyspark session
 
@@ -75,17 +66,6 @@ df_hm.show(2,truncate=False)'''
 
 st.code(_pyspark, language='python')
 
-# #load data HMDA
 
-# _df_hm= ''' #HMDA loan application data
-# df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
-
-# df_hm.show(2,truncate=False)'''
-
-# st.code(_df_hm, language='python')
-
-# df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
-
-# st.write(df_hm.show(2,truncate=False))
 
 
