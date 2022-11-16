@@ -66,7 +66,7 @@ df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
 print((df_hm.count(), len(df_hm.columns)))'''
 
 st.code(_pyspark, language='python')
-
+st.write('[3765289, 99]')
 
 
 st_df1_hmshow= pd.read_csv('st_df1_hmshow5.csv')
