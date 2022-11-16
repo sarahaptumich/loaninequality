@@ -124,5 +124,5 @@ df_hm_cleaned = df_hm_cleaned.select('county_code',
                             'denial_reason_1',
                             'loan_term',
                             'rate_spread')'''
-st.code(_df_cleane, language='python')
+st.code(_df_cleaned, language='python')
                             
