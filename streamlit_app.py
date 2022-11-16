@@ -130,5 +130,5 @@ st.code(''' # Split Dataframe by race and ethinicity
 df_hm_white = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_race =='White').toPandas()
 df_hm_asian = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_race =='Asian').toPandas()
 df_hm_black = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_race =='Black or African American').toPandas()
-df_hm_hispanic = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_ethnicity =='Hispanic or Latino').toPandas()'''), language='python')
+df_hm_hispanic = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_ethnicity =='Hispanic or Latino').toPandas()''', language='python')
                             
