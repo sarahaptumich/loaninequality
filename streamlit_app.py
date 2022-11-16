@@ -63,9 +63,11 @@ sc = spark.sparkContext
 
 #load data HMDA
 df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
-df_hm.show(5,truncate=False)'''
+print((df_hm.count(), len(df_hm.columns)))'''
 
 st.code(_pyspark, language='python')
+
+
 
 st_df1_hmshow= pd.read_csv('st_df1_hmshow5.csv')
 st.dataframe(st_df1_hmshow)
@@ -73,7 +75,7 @@ st.dataframe(st_df1_hmshow)
 st.write("There are a lot of cleaning we need to do for our mortgage dataset. There are missing values, erroneous values such as negative income, \
           and extreme outliers. In addition, there are many types of loans documented in the dataset and we will need to control for them. \
           For the purpose of our analysis, we will observe loans that are: conventional loans, single family homes, for personal use, \
-          we will remove incomplee applications as well.")
+          we will remove incomplete applications as well.")
 
 _N_df_view= '''#Create PySpark dataframe
 
