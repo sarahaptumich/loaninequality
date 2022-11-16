@@ -100,6 +100,6 @@ def cut_view_red():
         balloon_payment = 2
         """)
         
-        df_hm_cleaned = cut_view_red()'''
+df_hm_cleaned = cut_view_red()'''
 
 st.code(_N_df_view, language='python')
