@@ -121,4 +121,14 @@ df_hm_cleaned = df_hm_cleaned.select('county_code',
                             'loan_term',
                             'rate_spread')'''
 st.code(_df_cleaned, language='python')
+st.write('Next, we will split our dataset by different ethnicity groups so that we may load the data as pandas DataFrames.\
+         This makes some of our computations more efficient and it makes comparing select groups easier. To make our lives even easier, \
+         we will also merge the derived ethnicity and derived race column by moving Hispanic and Latino to race so that all minority groups \
+         are recorded in the same column.')
+
+st.code(''' # Split Dataframe by race and ethinicity
+df_hm_white = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_race =='White').toPandas()
+df_hm_asian = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_race =='Asian').toPandas()
+df_hm_black = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_race =='Black or African American').toPandas()
+df_hm_hispanic = df_hm_cleaned.select('*').filter(df_hm_cleaned.derived_ethnicity =='Hispanic or Latino').toPandas()'''), language='python')
                             
