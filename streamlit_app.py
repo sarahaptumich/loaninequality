@@ -66,6 +66,6 @@ df_hm.show(2,truncate=False)'''
 
 st.code(_pyspark, language='python')
 
-df_hm= pd.read_csv('/st_df1_hmshow5.csv')
+df_hm= pd.read_csv('st_df1_hmshow5.csv')
 
 
