@@ -62,7 +62,7 @@ sc = spark.sparkContext
 
 #load data HMDA
 df_hm = spark.read.option("header",True).csv("2021_public_lar.csv")
-df_hm.show(2,truncate=False)'''
+df_hm.show(5,truncate=False)'''
 
 st.code(_pyspark, language='python')
 
