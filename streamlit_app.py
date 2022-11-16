@@ -101,7 +101,7 @@ def cut_view_red():
         """)
         
 df_hm_cleaned = cut_view_red()
-# Take only features I need
+# Take only features we need
 df_hm_cleaned = df_hm_cleaned.select('county_code',
                             'derived_ethnicity', 
                             'derived_race', 
