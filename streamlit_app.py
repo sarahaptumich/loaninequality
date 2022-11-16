@@ -123,6 +123,6 @@ df_hm_cleaned = df_hm_cleaned.select('county_code',
                             'debt_to_income_ratio',
                             'denial_reason_1',
                             'loan_term',
-                            'rate_spread')''')
+                            'rate_spread')'''
 st.code(_df_cleane, language='python')
                             
