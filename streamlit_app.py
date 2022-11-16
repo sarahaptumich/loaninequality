@@ -72,13 +72,13 @@ st.dataframe(st_df1_hmshow)
 
 st.write("There are a lot of cleaning we need to do for our mortgage dataset. There are missing values, erroneous values such as negative income, \
           and extreme outliers. In addition, there are many types of loans documented in the dataset and we will need to control for them. \
-          For the purpose of our analysis, we will observe loans that are: conventional loans, single family homes, loan applications that are not \
-          incomplete or self-forfeited, for personal use, and more. Please see our report for more details.")
+          For the purpose of our analysis, we will observe loans that are: conventional loans, single family homes, for personal use, \
+          we will remove incomplee applications as well.")
 
 _N_df_view= '''#Create PySpark dataframe
 
 df_hm.createOrReplaceTempView('N_df_view')
-#filter DataFrame
+#filter DataFrame funtion
 def cut_view_red():
     return spark.sql("""\
         SELECT *
@@ -100,7 +100,12 @@ def cut_view_red():
         balloon_payment = 2
         """)
         
-df_hm_cleaned = cut_view_red()
+'''
+
+st.code(_N_df_view, language='python')
+st.write( "Using the funtion created above we will filter the home mortage dataset, We also selected our variables of interest to make this dataset more manageble")
+
+_df_cleaned= '''df_hm_cleaned = cut_view_red()
 # Take only features we need
 df_hm_cleaned = df_hm_cleaned.select('county_code',
                             'derived_ethnicity', 
@@ -118,6 +123,6 @@ df_hm_cleaned = df_hm_cleaned.select('county_code',
                             'debt_to_income_ratio',
                             'denial_reason_1',
                             'loan_term',
-                            'rate_spread')'''
-
-st.code(_N_df_view, language='python')
+                            'rate_spread')''')
+st.code(_df_cleane, language='python')
+                            
