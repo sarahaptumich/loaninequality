@@ -81,35 +81,25 @@ st.write("There are a lot of cleaning we need to do for our mortgage dataset. Th
           For the purpose of our analysis, we will observe loans that are: conventional loans, single family homes, for personal use, \
           we will remove incomplete applications as well.")
 
-_N_df_view= '''#Create PySpark dataframe
-
-df_hm.createOrReplaceTempView('N_df_view')
-#filter DataFrame funtion
-def cut_view_red():
-    return spark.sql("""\
-        SELECT *
-        FROM N_df_view
-        WHERE derived_loan_product_type = "Conventional:First Lien" AND
-        derived_dwelling_category = 'Single Family (1-4 Units):Site-Built' AND
-        conforming_loan_limit = "C" AND
-        action_taken != 4 AND
-        action_taken != 5 AND
-        loan_type = 1 AND
-        loan_purpose = 1 AND
-        lien_status = 1 AND
-        reverse_mortgage = 2 AND
-        open_end_line_of_credit = 2 AND
-        business_or_commercial_purpose = 2 AND
-        negative_amortization = 2 AND
-        occupancy_type = 1 AND
-        total_units = 1 AND
-        balloon_payment = 2
-        """)
+_N_df_view= '''# filter only loans for home purchases and for personal use, etc.
+df_hm_cleaned = df_hm.select('*')\
+    .filter((df_hm.business_or_commercial_purpose == 2) & (df_hm.loan_purpose ==1) &
+            (df_hm.occupancy_type ==1)& (df_hm.action_taken !=4) &
+            (df_hm.action_taken !=5) & (df_hm.loan_type ==1)&
+            (df_hm.derived_dwelling_category == 'Single Family (1-4 Units):Site-Built' )&
+            (df_hm.derived_loan_product_type == "Conventional:First Lien") &
+            (df_hm.conforming_loan_limit == "C") &
+            (df_hm.lien_status == 1) &
+            (df_hm.reverse_mortgage == 2) &
+            (df_hm.open_end_line_of_credit == 2) &
+            (df_hm.negative_amortization == 2 ) &
+            (df_hm.total_units == 1)&
+            (df_hm.balloon_payment ==2))
         
 '''
 
 st.code(_N_df_view, language='python')
-st.write( "Using the funtion created above we will filter the home mortage dataset, We also selected our variables of interest to make this dataset more manageble")
+st.write( "We also selected only our variables of interest to make this dataset more manageble")
 
 _df_cleaned= '''df_hm_cleaned = cut_view_red()
 # Take only features we need
