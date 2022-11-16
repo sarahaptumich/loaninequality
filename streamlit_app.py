@@ -70,3 +70,36 @@ st.code(_pyspark, language='python')
 st_df1_hmshow= pd.read_csv('st_df1_hmshow5.csv')
 st.dataframe(st_df1_hmshow)
 
+st.write("There are a lot of cleaning we need to do for our mortgage dataset. There are missing values, erroneous values such as negative income, \
+          and extreme outliers. In addition, there are many types of loans documented in the dataset and we will need to control for them. \
+          For the purpose of our analysis, we will observe loans that are: conventional loans, single family homes, loan applications that are not \
+          incomplete or self-forfeited, for personal use, and more. Please see our report for more details.")
+
+_N_df_view= '''#Create PySpark dataframe
+
+df_hm.createOrReplaceTempView('N_df_view')
+#filter DataFrame
+def cut_view_red():
+    return spark.sql("""\
+        SELECT *
+        FROM N_df_view
+        WHERE derived_loan_product_type = "Conventional:First Lien" AND
+        derived_dwelling_category = 'Single Family (1-4 Units):Site-Built' AND
+        conforming_loan_limit = "C" AND
+        action_taken != 4 AND
+        action_taken != 5 AND
+        loan_type = 1 AND
+        loan_purpose = 1 AND
+        lien_status = 1 AND
+        reverse_mortgage = 2 AND
+        open_end_line_of_credit = 2 AND
+        business_or_commercial_purpose = 2 AND
+        negative_amortization = 2 AND
+        occupancy_type = 1 AND
+        total_units = 1 AND
+        balloon_payment = 2
+        """)
+        
+        df_hm_cleaned = cut_view_red()'''
+
+st.code(_N_df_view, language='python')
