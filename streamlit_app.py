@@ -100,6 +100,24 @@ def cut_view_red():
         balloon_payment = 2
         """)
         
-df_hm_cleaned = cut_view_red()'''
+df_hm_cleaned = cut_view_red()
+# Take only features I need
+df_hm_cleaned = df_hm_cleaned.select('county_code',
+                            'derived_ethnicity', 
+                            'derived_race', 
+                            'derived_sex', 
+                            'action_taken', 
+                            'loan_purpose', 
+                            'business_or_commercial_purpose',
+                            'derived_dwelling_category',
+                            'loan_amount',
+                            'occupancy_type',
+                            'combined_loan_to_value_ratio',
+                            'interest_rate', 'property_value',
+                            'income',
+                            'debt_to_income_ratio',
+                            'denial_reason_1',
+                            'loan_term',
+                            'rate_spread')'''
 
 st.code(_N_df_view, language='python')
