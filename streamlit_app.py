@@ -67,6 +67,9 @@ print((df_hm.count(), len(df_hm.columns)))'''
 
 st.code(_pyspark, language='python')
 st.write('[3765289, 99]')
+st.write('The original dataset has 99 columns and over 3 million rows.')
+
+st.code( 'df_hm.show(2,truncate=False)', language='python')
 
 
 st_df1_hmshow= pd.read_csv('st_df1_hmshow5.csv')
